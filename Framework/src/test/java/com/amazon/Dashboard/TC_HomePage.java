@@ -39,8 +39,7 @@ public class TC_HomePage extends BaseClass{
 		//BrowserAppLaunch.quitBrowser(driver);
 		logger.pass("Test is passed");
 		Helper.captureScreenshots(driver);
- }
-	 catch (Exception ex) {
+		} catch (Exception ex) {
 			System.out.println("Caught Exception");
 			//LCUtils.analyzeAndThrowException(driver, ex);
 		}
