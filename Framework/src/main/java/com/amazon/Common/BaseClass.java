@@ -143,7 +143,7 @@ public void tearDownMethod(ITestResult results) throws IOException
 	logger.fail("Test Failed", MediaEntityBuilder.createScreenCaptureFromPath(Helper.captureScreenshots(driver)).build());
 	//Helper.captureScreenshots(driver);
 	}else if(results.getStatus()==ITestResult.SUCCESS) {
-	logger.pass("Test Failed", MediaEntityBuilder.createScreenCaptureFromPath(Helper.captureScreenshots(driver)).build());                           
+	logger.pass("Test Passed", MediaEntityBuilder.createScreenCaptureFromPath(Helper.captureScreenshots(driver)).build());                           
 	}
 	report.flush();
 }
