@@ -11,7 +11,7 @@ import com.amazon.Dashboard.HomePage;
 
 public class TC_HomePage extends BaseClass{
 	
- //WebDriver driver;
+ //WebDriver driver1;
  //Object Initialization 
  
  @Test
@@ -21,11 +21,11 @@ public class TC_HomePage extends BaseClass{
 			initialize(new Object() {
 			}.getClass());
 			
-		logger=report.createTest("Amazon Dashbord check");
+		//logger=report.createTest("Amazon Dashbord check");
 		
 	    driver=BrowserAppLaunch.launchBrowser(driver, "Chrome","https://www.amazon.in/");
 	    HomePage hp= new HomePage(driver);
-	    
+	    logger=report.createTest("Amazon Dashbord check");
 		//This will verify the Amazon logo
 		hp.verifyAmazonLogo();
 		logger.info("Verified Amazon logo");
