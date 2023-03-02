@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="24777" started-at="2023-02-23T05:43:39Z" finished-at="2023-02-23T05:44:04Z">
+  <suite name="Suite" duration-ms="25439" started-at="2023-03-01T10:10:52Z" finished-at="2023-03-01T10:11:17Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="24777" started-at="2023-02-23T05:43:39Z" finished-at="2023-02-23T05:44:04Z">
+    <test name="Test" duration-ms="25439" started-at="2023-03-01T10:10:52Z" finished-at="2023-03-01T10:11:17Z">
       <class name="com.amazon.Dashboard.TC_HomePage">
-        <test-method status="PASS" signature="reports()[pri:0, instance:com.amazon.Dashboard.TC_HomePage@3bfdc050]" name="reports" is-config="true" duration-ms="122" started-at="2023-02-23T05:43:39Z" finished-at="2023-02-23T05:43:39Z">
+        <test-method status="PASS" signature="reports()[pri:0, instance:com.amazon.Dashboard.TC_HomePage@3bfdc050]" name="reports" is-config="true" duration-ms="118" started-at="2023-03-01T10:10:52Z" finished-at="2023-03-01T10:10:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reports -->
-        <test-method status="PASS" signature="HomePage()[pri:0, instance:com.amazon.Dashboard.TC_HomePage@3bfdc050]" name="HomePage" duration-ms="23698" started-at="2023-02-23T05:43:39Z" finished-at="2023-02-23T05:44:03Z">
+        <test-method status="PASS" signature="HomePage()[pri:0, instance:com.amazon.Dashboard.TC_HomePage@3bfdc050]" name="HomePage" duration-ms="24403" started-at="2023-03-01T10:10:52Z" finished-at="2023-03-01T10:11:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage -->
-        <test-method status="PASS" signature="tearDownMethod(org.testng.ITestResult)[pri:0, instance:com.amazon.Dashboard.TC_HomePage@3bfdc050]" name="tearDownMethod" is-config="true" duration-ms="384" started-at="2023-02-23T05:44:03Z" finished-at="2023-02-23T05:44:03Z">
+        <test-method status="PASS" signature="tearDownMethod(org.testng.ITestResult)[pri:0, instance:com.amazon.Dashboard.TC_HomePage@3bfdc050]" name="tearDownMethod" is-config="true" duration-ms="366" started-at="2023-03-01T10:11:16Z" finished-at="2023-03-01T10:11:17Z">
           <params>
             <param index="0">
               <value>
@@ -26,11 +26,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownMethod -->
-        <test-method status="PASS" signature="quitBrowser()[pri:0, instance:com.amazon.Dashboard.TC_HomePage@3bfdc050]" name="quitBrowser" is-config="true" duration-ms="678" started-at="2023-02-23T05:44:03Z" finished-at="2023-02-23T05:44:04Z">
+        <test-method status="PASS" signature="quitBrowser()[pri:0, instance:com.amazon.Dashboard.TC_HomePage@3bfdc050]" name="quitBrowser" is-config="true" duration-ms="657" started-at="2023-03-01T10:11:17Z" finished-at="2023-03-01T10:11:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitBrowser -->
       </class> <!-- com.amazon.Dashboard.TC_HomePage -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
