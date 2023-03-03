@@ -28,7 +28,7 @@ public class BaseClass {
 	protected String methodName = null;
 	protected String testName = null;
 	//protected SeleniumWrapper selenium = null;
-	protected WebDriver driver = null;
+	protected WebDriver driver;
 	protected WebDriver iedriver = null;
 	protected WebDriver chromedriver = null;
 	protected Map<String, String> uiSessionData = new HashMap<String, String>();
