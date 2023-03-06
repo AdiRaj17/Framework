@@ -23,13 +23,19 @@ public void Techlist()
 	    
 	    CustomerWebtable cusTable= new CustomerWebtable(driver);
 	    //Print column headers
-	    cusTable.printCustomerColumnHeaders();
-	    
-	    //Print given column values
+	    //cusTable.printCustomerColumnData(jsonConfig.getString("index"));
+	    int columnsize=cusTable.printCustomerColumnHeaders();
+	    for(int i=0;i<columnsize;i++)
+	    {
+	    	String s=String.valueOf(i);
+	    	cusTable.printCustomerColumnData(s);
+	    }
+	    /*//Print given column values
 	    cusTable.printCustomerColumnData(jsonConfig.getString("index"));
 	    
-	   //Print given row values
-	    cusTable.printCustomerRowData(jsonConfig.getString("rowindex"));
+	   //Print values of all the column present in a Webtable
+	    //for(int i=0;)
+	    cusTable.printCustomerRowData(jsonConfig.getString("rowindex"));*/
 	    
 	    logger.info("Printed customer header name");
 	    Helper.captureScreenshots(driver);
