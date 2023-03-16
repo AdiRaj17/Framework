@@ -19,6 +19,7 @@ public class HomePage {
 	public static final String XP_SEARCHED_PRODUCT ="//div[@id='search']/span/div/h1/div/div[1]/div/div/span[contains(text(),'varProduct')]";
 	public static final String XP_SEARCHED_PRODUCT_AUTO_SUGGESTION ="//div[@class='s-suggestion-container']";
 	public static final String XP_LANGUAGE_DROPDOWN ="//a[@id='icp-nav-flyout']";
+	public static final String XP_AMAZON_LANGUAGE_SELECTION ="(//a[@href='#switch-lang=varLang_IN'])[1]";
 	//public static final String XP_HOME_PAGE_SEARCH_BOX_TEXT ="//label[@for='twotabsearchtextbox']";
 	
 	public HomePage(WebDriver driver) {
@@ -104,13 +105,22 @@ public class HomePage {
 	}
 	
 	/**
-	 * hover over language drop down on Home page
+	 * Hover over language drop down on Home page
 	 * @author aditya
 	 * */
-	public void hoverLanguageDropDown(String productName) throws Exception {		
+	public void hoverLanguageDropDown() throws Exception {		
 		WebElement language=driver.findElement(By.xpath(XP_LANGUAGE_DROPDOWN));
 		Actions actions = new Actions(driver);
 		actions.moveToElement(language).perform();
-		System.out.println("Hovered over the language drop down");
+		System.out.println("Hovered over the language drop down");		
+	}
+	
+	/**
+	 * Select Preferred language drop down on Home page
+	 * @author aditya
+	 * */
+	public void selectPreferredLanguage(String language) throws Exception {		
+		driver.findElement(By.xpath(XP_AMAZON_LANGUAGE_SELECTION.replace("varLang", language))).click();
+		System.out.println("Preferred language is selected " +language);		
 	}
 }
