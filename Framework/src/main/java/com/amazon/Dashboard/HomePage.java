@@ -1,5 +1,7 @@
 package com.amazon.Dashboard;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +16,7 @@ public class HomePage {
 	public static final String XP_HOME_PAGE_SEARCH_BOX ="//input[@id='twotabsearchtextbox']";
 	public static final String XP_HOME_PAGE_SEARCH_BOX_TEXT ="//input[@aria-label='Search Amazon.in']";
 	public static final String XP_SEARCHED_PRODUCT ="//div[@id='search']/span/div/h1/div/div[1]/div/div/span[contains(text(),'varProduct')]";
+	public static final String XP_SEARCHED_PRODUCT_AUTO_SUGGESTION ="//div[@class='s-suggestion-container']";
 	//public static final String XP_HOME_PAGE_SEARCH_BOX_TEXT ="//label[@for='twotabsearchtextbox']";
 	
 	public HomePage(WebDriver driver) {
@@ -70,17 +73,31 @@ public class HomePage {
 	 * @throws InterruptedException 
 	 * */
 	public void searchProductInAmazonHome(String searchedProduct) throws Exception {
-		//String actualtext =driver.findElement(By.xpath(XP_HOME_PAGE_SEARCH_BOX_TEXT)).getText();
+		
 		WebElement search= driver.findElement(By.xpath(XP_HOME_PAGE_SEARCH_BOX_TEXT));
 		search.sendKeys(searchedProduct);
 		search.sendKeys(Keys.RETURN);
 		Thread.sleep(3000);
-		WebElement ele=driver.findElement(By.xpath(XP_SEARCHED_PRODUCT.replace("varProduct", searchedProduct)));
-		//String serachedProductlist=ele.getText();
+		WebElement ele=driver.findElement(By.xpath(XP_SEARCHED_PRODUCT.replace("varProduct", searchedProduct)));	
 		if(ele.getText().contains(searchedProduct))
 			System.out.println("Amazon search feature is working as expected");		    
 		else
 			throw new Exception("Amazon search feature is not working");
-			//System.out.println("Amazon search feature is not working");
+			
+	}
+	
+	/**
+	 * Enter search product name and print all auto suggestion 
+	 * @author aditya
+	 * */
+	public void printProductAutoSuggestion(String productName) throws Exception {		
+		driver.findElement(By.xpath(XP_HOME_PAGE_SEARCH_BOX_TEXT)).sendKeys(productName);		
+		Thread.sleep(3000);
+		List<WebElement> ele= driver.findElements(By.xpath(XP_SEARCHED_PRODUCT_AUTO_SUGGESTION));
+	    for(int i=0;i<ele.size();i++)
+	    {
+	    	String autosuggestion=ele.get(i).getText();
+	    	System.out.println("Auto suggestion values are " +autosuggestion);
+	    }		
 	}
 }
