@@ -1,5 +1,7 @@
 package com.amazon.WebTable;
 
+import static org.testng.Assert.assertEquals;
+
 import org.testng.annotations.Test;
 
 import com.amazon.Common.BaseClass;
@@ -20,6 +22,12 @@ public class TC_WindwHandle extends BaseClass {
 	    
 	    WindowHandle wh = new WindowHandle(driver);
 	    
+	  /*  String pageTitle=driver.getTitle();
+	    String expected="Facebook";
+	    
+	    assertEquals(pageTitle, expected);*/
+	    //assertEquals(pageTitle, expected);
+	    
 	    wh.clickNewBrowserWindow();
 	    logger.info("Clicked on new browser window");
 	    
@@ -31,9 +39,11 @@ public class TC_WindwHandle extends BaseClass {
 	    
 	    wh.clickAndAcceptAlertPopUp();
 	    logger.info("Clicked on Popup and accepted it");
+	    
+	   // assert.assertEquals(actual, expected);
 }
 		 catch (Exception ex) {
-				System.out.println("Caught Exception");
+				System.out.println("Caught Exception " +ex);
 				//LCUtils.analyzeAndThrowException(driver, ex);
 			}
 	  }
