@@ -13,7 +13,7 @@ public class BrowserAppLaunch {
 	{
 		if(browser.equals("Chrome")) 
 		{
-		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") +"/drivers/win_chromedriver_109.exe");
+		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") +"/drivers/win_chromedriver_111.exe");
 		//System.getProperty("user.dir")
 		driver=new ChromeDriver();
 		}

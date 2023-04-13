@@ -31,11 +31,24 @@ public class TC_HomePage extends BaseClass{
 		logger.info("Verified Amazon logo");
 		Helper.captureScreenshots(driver);
 		
-		//This will verify the Search box and corresponding text
+		/*//This will verify the Search box and corresponding text
 		hp.verifyAmazonSearchBox();		
 		//hp.verifyAmazonSearchBoxText("Search Amazon.in");
 		
+		//This will search product in Amazon home page
 		hp.searchProductInAmazonHome(jsonConfig.getString("searchProductName"));
+		
+		//Print all auto suggestion in search bar
+		hp.printProductAutoSuggestion(jsonConfig.getString("searchProductName"));
+*/		
+		//Hover over language drop down
+		hp.hoverLanguageDropDown();
+		logger.info("Hover over language drop down");
+		
+		//Select Preferred language
+		hp.selectPreferredLanguage(jsonConfig.getString("language"));
+		logger.info("Selected Preferred from language drop down");
+		
 		//BrowserAppLaunch.quitBrowser(driver);
 		logger.pass("Test is passed");
 		Helper.captureScreenshots(driver);

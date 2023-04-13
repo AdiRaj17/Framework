@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.*;
 
 public class HomePage {
@@ -17,6 +18,8 @@ public class HomePage {
 	public static final String XP_HOME_PAGE_SEARCH_BOX_TEXT ="//input[@aria-label='Search Amazon.in']";
 	public static final String XP_SEARCHED_PRODUCT ="//div[@id='search']/span/div/h1/div/div[1]/div/div/span[contains(text(),'varProduct')]";
 	public static final String XP_SEARCHED_PRODUCT_AUTO_SUGGESTION ="//div[@class='s-suggestion-container']";
+	public static final String XP_LANGUAGE_DROPDOWN ="//a[@id='icp-nav-flyout']";
+	public static final String XP_AMAZON_LANGUAGE_SELECTION ="(//a[@href='#switch-lang=varLang_IN'])[1]";
 	//public static final String XP_HOME_PAGE_SEARCH_BOX_TEXT ="//label[@for='twotabsearchtextbox']";
 	
 	public HomePage(WebDriver driver) {
@@ -99,5 +102,25 @@ public class HomePage {
 	    	String autosuggestion=ele.get(i).getText();
 	    	System.out.println("Auto suggestion values are " +autosuggestion);
 	    }		
+	}
+	
+	/**
+	 * Hover over language drop down on Home page
+	 * @author aditya
+	 * */
+	public void hoverLanguageDropDown() throws Exception {		
+		WebElement language=driver.findElement(By.xpath(XP_LANGUAGE_DROPDOWN));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(language).perform();
+		System.out.println("Hovered over the language drop down");		
+	}
+	
+	/**
+	 * Select Preferred language drop down on Home page
+	 * @author aditya
+	 * */
+	public void selectPreferredLanguage(String language) throws Exception {		
+		driver.findElement(By.xpath(XP_AMAZON_LANGUAGE_SELECTION.replace("varLang", language))).click();
+		System.out.println("Preferred language is selected " +language);		
 	}
 }
