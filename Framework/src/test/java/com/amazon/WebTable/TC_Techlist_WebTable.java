@@ -1,5 +1,7 @@
 package com.amazon.WebTable;
 
+import java.util.concurrent.TimeUnit;
+
 import org.testng.annotations.Test;
 
 import com.amazon.Common.BaseClass;
@@ -20,7 +22,7 @@ public void Techlist()
 		logger=report.createTest("Techlist Webtable check");
 		//BrowserAppLaunch ba = new BrowserAppLaunch();
 	    driver=BrowserAppLaunch.launchBrowser(driver,"Chrome","https://www.techlistic.com/p/demo-selenium-practice.html");
-	    
+	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.MILLISECONDS);
 	    CustomerWebtable cusTable= new CustomerWebtable(driver);
 	    //Print column headers
 	    //cusTable.printCustomerColumnData(jsonConfig.getString("index"));
