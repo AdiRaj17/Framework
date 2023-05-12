@@ -1,0 +1,36 @@
+
+
+-------------------------------------------------------------------------------------------------------------
+Adi1710
+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
+
+https://github.com/AdiRaj17/Framework.git
+
+
+AdiRaj17(AdiRaj17<aditya171089@gmail.com>)
+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
+-------------------------------------------------------------------------------------------------------------------------------
+Credential : User Name: AdiRaj17 Password : Cricmuz@1817
+java -jar C:\Users\adiraj\Documents\jenkins.war
+to change port name : --httpPort-8084
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="Test">
+    <classes>
+      <class name="com.amazon.Dashboard.TC_LaunchApplication"/>
+      <class name="com.amazon.Dashboard.TC_HomePage"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+clean install -Dbrowser=Chrome -DappUrl=https://www.amazon.in -DxmlFiles=testng.xml
+
+testng.xml
+
+-DxmlFileName=testng.xml
+
+Selenium Cucumber Java BDD Framework 1 - Setup | Step by Step | Raghav Pal
+
+
