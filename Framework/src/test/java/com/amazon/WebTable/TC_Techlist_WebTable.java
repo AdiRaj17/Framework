@@ -31,6 +31,7 @@ public void Techlist()
 	    {
 	    	String s=String.valueOf(i);
 	    	cusTable.printCustomerColumnData(s);
+	    	
 	    }
 	    /*//Print given column values
 	    cusTable.printCustomerColumnData(jsonConfig.getString("index"));
