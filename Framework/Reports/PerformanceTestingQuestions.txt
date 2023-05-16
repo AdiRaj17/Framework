@@ -1,0 +1,75 @@
+Basic JMeter Quetions
+
+1. Explain what are the different types of post processors ? 
+
+2. Explain what is the difference between variable class and properties class in JMeter?
+Var - can be created and used with in the same thread group
+whereas props - can be used within multiple thread groups
+
+3. What is JMeter execution flow ?
+Configuration elements.
+Pre-Processors.
+Timers.
+Sampler.
+Post-Processors (unless SampleResult is null)
+Assertions (unless SampleResult is null)
+Listeners (unless SampleResult is null)
+
+4. What all protocols have you used so far using JMeter?
+
+5. Once NFR is ready how do you create the performance test plan? What all factors you look for?
+
+6. How do you analyze results using JMeter? Have you intergrated any other performance monitoring tool (APM tool) with JMeter?
+
+7. Apart from Load testing what all types of performance testing you have done so far ? How did you accomplish those using JMeter?
+
+
+Performance Engineering
+
+1. How do you identify the performance bottlenecks?
+Ans: The Performance Bottlenecks can be detected by using monitors.
+These monitors might be application server monitors, web server monitors, database server monitors and network monitors.
+They help in finding out the troubled area in our scenario which causes increased response time.
+The measurements made are usually a performance response time, throughput, hits/sec, network delay graphs, etc
+
+2. What kind of problem can we face regarding hardware, software, network and memory bottleneck during the performance test?
+Ans: The possible issues amongst others could be –
+i. Lack of Hardware
+ii. Memory Leakage
+iii. Network related issues.
+iv. Application/Software error
+
+3. What would be your recommendation to improve performance measure?
+Fine Tuning of network, database, and app and the web server is recommended.
+i. At the network level tries to optimize the latency and bandwidth.
+ii. At the database level, verify all indexes and sequences by running profilers. You may also optimize your database queries.
+iii. At the App server level, run profilers for finding the memory leaks in the application
+iv. At the web server level, you can use monitors and optimize the throughput and other related metrics of the server.
+
+LoadRunner
+
+1. What all protocols you have used so far in LoadRunner ?
+2. Diff between Web HTTP/HTML and Web TrueClient prototcol ?
+3. What are the recording modes for Web HTTP/HTML protocol of LoadRunner?
+4. Can you list me some of the pre defined functions you have used during LoadRunner scripting.
+Have you ever written a user-defined functions ? How do we write a user-defined function in LoadRunner?
+Ans : User should create the external library that contains the function. This library must then be added to the bin directory of VuGen. And then, the user-defined function can be assigned as a parameter.
+5. What is the difference in running the Vuser as a process and as a thread? Which is more advantageous way of running Vuser?
+Ans : When Vuser is run as a process, the same driver program is loaded into memory for each Vuser. This will take a large amount of memory and will limit the number of Vusers you can run on a single generator.
+When Vuser is run as a thread, only one instance of driver program is shared by given number of Vusers. You can run a number of Vusers on a single generator using the multi-threading mode.
+6. What is the benefit of running a Vuser script as a thread?
+The advantage of running a Vuser script as a thread which allows more Vusers to be used for one load generator. Running Vuser scripts as processes utilizes a lot of memory because all of the loaded scripts use the same driver.
+This limits the number of Vuser scripts that can be run on one generator.
+7. What are all the types of Goals in Goal-Oriented Scenario of Load Runner?
+Ans: Five different types of goals:
+Number of concurrent Vusers
+Number of hits per second
+Number of transactions per second
+Number of pages per minute
+Transaction response time
+8. During the load test, what is the optimum setting for Logs?
+Ans: For the load test log level is set to minimal. This can be achieved by setting the log level to the standard log and selecting the radio button “Send a message only when an error occurs”.
+9. How will you stop the execution of a script on error?
+Ans: This can be achieved through lr_abort function. The function instructs the Vuser to stop executing the Action section and end the execution by executing the vuser_end section. This function is helpful in handling a specific error.
+This can also be used to handle a situation rather than error where execution is not possible. The function assigned “Stopped” status to the Vuser which stopped due to lr_abort function. In the Run-Time setting, “Continue on error” should be unchecked.
+
