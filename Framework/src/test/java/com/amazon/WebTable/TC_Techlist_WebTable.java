@@ -30,7 +30,7 @@ public void Techlist()
 	    for(int i=0;i<columnsize;i++)
 	    {
 	    	String s=String.valueOf(i);
-	    	cusTable.printCustomerColumnData(s);
+	    	cusTable.printCustomerColumnData(s);	    	
 	    }
 	    /*//Print given column values
 	    cusTable.printCustomerColumnData(jsonConfig.getString("index"));
