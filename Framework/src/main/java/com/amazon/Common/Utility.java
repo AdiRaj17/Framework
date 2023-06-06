@@ -30,5 +30,15 @@ public class Utility {
 		Select select = new Select(driver.findElement(By.xpath(xpath)));
 		select.selectByValue(value);
 	}
+	
+	public static void deselectFromDropdownByIndex(WebDriver driver, String xpath, int index) throws Exception {
+		Select select = new Select(driver.findElement(By.xpath(xpath)));
+		select.deselectByIndex(index);
+	}
+	
+	public static void deselectFromDropdownByValue(WebDriver driver, String xpath, String value) throws Exception {
+		Select select = new Select(driver.findElement(By.xpath(xpath)));
+		select.deselectByValue(value);
+	}
 
 }

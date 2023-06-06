@@ -13,7 +13,7 @@ public class SelectClass {
 WebDriver driver=null;
 	
 	public static final String XP_OLD_SELECT_DD ="//select[@id='oldSelectMenu']";
-	public static final String XP_CUSTOMER_COULMN_HEADERS ="//table[@id='customers']//th";	
+	public static final String XP_MULTI_SELECT_DD ="//select[@id='cars']";	
 	public static final String XP_CUSTOMER_COULMN_DATA ="//table[@id='customers']//tr//td[colindex]";	
 	public static final String XP_SEARCHED_PRODUCT ="//div[@id='search']/span/div/h1/div/div[1]/div/div/span[contains(text(),'varProduct')]";
 
@@ -38,7 +38,7 @@ WebDriver driver=null;
 	}
 	
 	/**
-	 * Select drop down value using Index 
+	 * Select drop down value using Index and Value
 	 * @author aditya
 	 * @throws Exception 
 	 * */
@@ -51,4 +51,31 @@ WebDriver driver=null;
 		
 	}
 	
+	/**
+	 * Multi select drop down value using Index and Value
+	 * @author aditya
+	 * @throws Exception 
+	 * */
+	public void selectMultipleDDValue(int value,String abc) throws Exception {
+		Utility.selectFromDropdownByIndex(driver, XP_MULTI_SELECT_DD, value);
+		Thread.sleep(5000);
+		Utility.selectFromDropdownByValue(driver, XP_MULTI_SELECT_DD, abc);
+		Thread.sleep(5000);
+		System.out.println("Selected drop down values from multi select dd  " +value);
+		System.out.println("Selected drop down values from multi select dd  " +abc);
+	}
+	
+	/**
+	 * Multi select drop down value using Index and Value
+	 * @author aditya
+	 * @throws Exception 
+	 * */
+	public void deselectMultipleDDValue(int value,String abc) throws Exception {
+		Utility.deselectFromDropdownByIndex(driver, XP_MULTI_SELECT_DD, value);
+		Thread.sleep(5000);
+		Utility.deselectFromDropdownByValue(driver, XP_MULTI_SELECT_DD, abc);
+		Thread.sleep(5000);
+		System.out.println("Selected drop down values from multi select dd  " +value);
+		System.out.println("Selected drop down values from multi select dd  " +abc);
+	}
 }
