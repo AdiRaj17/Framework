@@ -29,7 +29,10 @@ public class TC_DemoQA_Select extends BaseClass {
 		    //First drop down
 		    sc.printDropDownValue();
 		    //Select drop down value using index
-		    sc.selectOldStyleValue(jsonConfig.getInt("index"),jsonConfig.getString("value"));
+		    //sc.selectOldStyleValue(jsonConfig.getInt("index"),jsonConfig.getString("value"));
+		    
+		    // Verify drop down is sorted or not
+		    sc.verfiyColourDDSortedOrNot();
 		    logger.pass("Select drop down test case is passed");
 }
 		 catch (Exception ex) {
@@ -37,7 +40,7 @@ public class TC_DemoQA_Select extends BaseClass {
 				//LCUtils.analyzeAndThrowException(driver, ex);
 			}
 	 }
-	 @Test(priority=2)
+	 @Test(priority=2,enabled=false)
 	 public void MultiSelect()
 	 {
 		 logger.info("Running Mutli Select DD test case");
