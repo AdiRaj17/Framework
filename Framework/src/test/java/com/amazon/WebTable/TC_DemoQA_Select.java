@@ -50,8 +50,7 @@ public class TC_DemoQA_Select extends BaseClass {
 		    driver=BrowserAppLaunch.launchBrowser(driver, "Chrome","https://demoqa.com/select-menu");
 		    SelectClass sc = new SelectClass(driver);
 		    HomePage hp= new HomePage(driver);
-		    logger=report.createTest("Demo QA Site launched");
-		    
+		    logger=report.createTest("Demo QA Site launched");		    
 		    //Select drop down value using index
 		    sc.selectMultipleDDValue(jsonConfig.getInt("index"),jsonConfig.getString("value"));
 		    logger.info("Selected Mutli Select DD value");
