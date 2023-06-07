@@ -85,7 +85,7 @@ WebDriver driver=null;
 	 * @throws Exception 
 	 * */
 	public void verfiyColourDDSortedOrNot() throws Exception {
-		Utility.addDDValuesToArrayList(driver, XP_MULTI_SELECT_DD);		
+		Utility.verfiyDDValuesSortedOrNott(driver, XP_MULTI_SELECT_DD);		
 		System.out.println("Verified colour drop down is sorted or not " );
 		
 	}
