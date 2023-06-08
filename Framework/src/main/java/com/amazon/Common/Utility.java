@@ -46,7 +46,7 @@ public class Utility {
 		select.deselectByValue(value);
 	}
 	
-	public static void addDDValuesToArrayList(WebDriver driver, String xpath) throws Exception {
+	public static void verfiyDDValuesSortedOrNott(WebDriver driver, String xpath) throws Exception {
 		Select select = new Select(driver.findElement(By.xpath(xpath)));
 		List<WebElement> ele=select.getOptions();
 		ArrayList<String> originalList = new ArrayList<String>();
