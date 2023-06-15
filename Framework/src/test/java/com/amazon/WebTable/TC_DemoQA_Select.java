@@ -1,6 +1,5 @@
 package com.amazon.WebTable;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import com.amazon.Common.BaseClass;
@@ -11,23 +10,22 @@ import com.techlist.WebTable.SelectClass;
 
 public class TC_DemoQA_Select extends BaseClass {
 //WebDriver driver;	
-	 @Test(priority=1)
+	 @Test
 	 public void Select()
 	 {
-		 //logger.info("Running Select DD test case");
 		 try {
 				initialize(new Object() {
 				}.getClass());
-				
-			//logger=report.createTest("Amazon Dashbord check");
 			
 		    driver=BrowserAppLaunch.launchBrowser(driver, "Chrome","https://demoqa.com/select-menu");
 		    SelectClass sc = new SelectClass(driver);
 		    HomePage hp= new HomePage(driver);
 		    logger=report.createTest("Demo QA Site launched");
 		    
+		    System.out.println("The current thread Id is :" + Thread.currentThread().getId());
+		    
 		    //First drop down
-		    sc.printDropDownValue();
+		    //sc.printDropDownValue();
 		    //Select drop down value using index
 		    //sc.selectOldStyleValue(jsonConfig.getInt("index"),jsonConfig.getString("value"));
 		    
@@ -40,16 +38,16 @@ public class TC_DemoQA_Select extends BaseClass {
 				//LCUtils.analyzeAndThrowException(driver, ex);
 			}
 	 }
-	 @Test(priority=2,enabled=false)
+	 @Test
 	 public void MultiSelect()
 	 {
-		 logger.info("Running Mutli Select DD test case");
+		 //logger.info("Running Mutli Select DD test case");
 		 try {
 				initialize(new Object() {
 				}.getClass());
 				
-			//logger=report.createTest("Amazon Dashbord check");
-			
+			System.out.println("The current thread Id is :" + Thread.currentThread().getId());		
+							
 		    driver=BrowserAppLaunch.launchBrowser(driver, "Chrome","https://demoqa.com/select-menu");
 		    SelectClass sc = new SelectClass(driver);
 		    HomePage hp= new HomePage(driver);
@@ -64,7 +62,7 @@ public class TC_DemoQA_Select extends BaseClass {
 }
 		 catch (Exception ex) {
 				System.out.println("Caught Exception " +ex.getMessage());
-				//LCUtils.analyzeAndThrowException(driver, ex);
+				
 			}
 	 }
 }

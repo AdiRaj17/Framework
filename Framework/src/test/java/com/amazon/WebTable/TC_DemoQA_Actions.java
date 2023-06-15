@@ -11,7 +11,7 @@ import com.techlist.WebTable.SelectClass;
 
 public class TC_DemoQA_Actions extends BaseClass {
 	
-	@Test(priority=1,enabled=false)
+	@Test
 	 public void DragDrop()
 	 {	 
 		 try {
